@@ -20,7 +20,9 @@
       "@/hooks/*": ["src/hooks/*"],
       "@/layouts/*": ["src/layouts/*"],
       "@/helpers/*": ["src/helpers/*"],
-      "@/theme": ["src/theme"]
+      "@/utils/*": ["src/utils/*"],
+      "@/theme": ["src/theme"],
+      "@/public/*": ["public/*"]
     }
   },
   "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx"],
