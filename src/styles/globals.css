@@ -1,16 +1,12 @@
-html,
-body {
-  padding: 0;
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
-    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+.scrollbar::-webkit-scrollbar {
+  height: 6px; /* width of the entire scrollbar */
 }
-
-a {
-  color: inherit;
-  text-decoration: none;
+.scrollbar::-webkit-scrollbar-track {
+  background: transparent; /* color of the tracking area */
 }
-
-* {
-  box-sizing: border-box;
+.scrollbar::-webkit-scrollbar-thumb {
+  background-color: var(
+    --chakra-colors-primary-200
+  ); /* color of the scroll thumb */
+  border-radius: 20px; /* roundness of the scroll thumb */
 }

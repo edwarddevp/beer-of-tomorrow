@@ -1,3 +1,9 @@
+export interface RequestType<T> {
+  isLoading: boolean;
+  data: T;
+  errors: Array<{ message: string }>;
+}
+
 export interface Beer {
   id: number;
   name: string;

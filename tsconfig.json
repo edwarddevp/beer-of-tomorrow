@@ -22,7 +22,9 @@
       "@/helpers/*": ["src/helpers/*"],
       "@/utils/*": ["src/utils/*"],
       "@/theme": ["src/theme"],
-      "@/public/*": ["public/*"]
+      "@/configs/*": ["src/configs/*"],
+      "@/constants/*": ["src/constants/*"],
+      "@/actions/*": ["src/actions/*"]
     }
   },
   "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx"],
