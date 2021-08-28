@@ -1,4 +1,6 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+This is the e-commerce sit of the company beer-of-tomorrow
+
+Project built for the frontend challenge of time jobs
 
 ## Getting Started
 
