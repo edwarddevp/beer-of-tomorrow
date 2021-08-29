@@ -8,7 +8,7 @@ const primary = (props: any) => {
     bgGradient: `linear(to-t, ${c}.200, ${c}.100, ${c}.50)`,
     borderRadius: "1px",
     fontSize:
-      props.fontSize === "md" ? "sm" : props.fontSize === "sm" ? "xs" : "xs",
+      props.fontSize === "md" ? "sm" : props.fontSize === "sm" ? "sm" : "sm",
     color,
     _hover: {
       bgGradient: `linear(to-t, ${c}.300, ${c}.200, ${c}.100)`,
@@ -21,8 +21,6 @@ const primary = (props: any) => {
 
 const primaryOutline = (props: any) => {
   const { colorScheme: c } = props;
-  const borderColor = mode(`gray.200`, `whiteAlpha.300`)(props);
-  const color = mode(`white`, `black`)(props);
   return {
     borderWidth: "1px",
     borderColor: `${c}.200`,

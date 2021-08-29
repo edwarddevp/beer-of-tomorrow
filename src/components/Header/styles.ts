@@ -32,7 +32,7 @@ export const beersHeader = {
   justifyContent: "space-between",
   alignItems: "center",
   spacing: 4,
-  pb: [4, null, 16],
+  pb: [4, null, 10],
   px: 2,
   fontSize: ["md", null, "lg"],
   minH: "91px",
@@ -43,7 +43,9 @@ export const beersHeader = {
 };
 
 export const headerBottomFigure = {
-  pos: "absolute",
-  bottom: "-8px",
-  left: "calc(50% - 43.5px)",
+  sx: {
+    position: "absolute",
+    bottom: "-8px",
+    left: "calc(50% - 43.5px)",
+  },
 };
