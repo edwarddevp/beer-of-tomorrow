@@ -21,6 +21,7 @@ export const mediaIcons = (color: string) => ({
 });
 
 export const logoImage = {
+  cursor: "pointer",
   src: "logo.png",
   alt: "Beer of Tomorrow logo",
   h: "auto",
@@ -48,4 +49,26 @@ export const headerBottomFigure = {
     bottom: "-8px",
     left: "calc(50% - 43.5px)",
   },
+};
+
+export const cartItemsNumber = {
+  sx: {
+    position: "absolute",
+  },
+  justifyContent: "center",
+  alignItems: "center",
+  w: [4, null, null, 6],
+  h: [4, null, null, 6],
+  top: ["-8px", null, null, "-12px"],
+  right: ["-8px", null, null, "-12px"],
+  borderRadius: "100%",
+  bg: "primary.500",
+  color: "white",
+  fontSize: ["10px", null, null, "14px"],
+};
+
+export const cartButton = {
+  "aria-label": "Go To the Cart",
+  variant: "primary-outline",
+  fontSize: ["16px", null, "24px"],
 };

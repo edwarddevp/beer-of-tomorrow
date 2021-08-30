@@ -23,10 +23,18 @@ const colors = {
     100: "#D1625A",
     50: "#D26760",
   },
+  gold: {
+    300: "#eddbb9",
+    800: "#b7a693",
+    900: "#91927b",
+  },
   backgrounds: {
-    header: "#faf9f7",
-    body: "#fff",
-    copyright: "#faf9f7",
+    header: "#F5F5F5",
+    main: "#faf9f7",
+    footer: "#faf9f7",
+    copyright: "#F5F5F5",
+    cards: "#faf9f7",
+    cardsBorders: "#F0F0F0",
   },
   brands: {
     vk: "#4C75A3",

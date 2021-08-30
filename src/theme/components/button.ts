@@ -1,38 +1,47 @@
 import { mode } from "@chakra-ui/theme-tools";
 
-const primary = (props: any) => {
+const primary = ({ isDisabled, ...props }: any) => {
   const { colorScheme: c } = props;
-  const borderColor = mode(`gray.200`, `whiteAlpha.300`)(props);
   const color = mode(`white`, `black`)(props);
+  const gradient = `linear(to-t, ${c}.200, ${c}.100, ${c}.50)`;
+  const hoverGradient = `linear(to-t, ${c}.300, ${c}.200, ${c}.100)`;
   return {
-    bgGradient: `linear(to-t, ${c}.200, ${c}.100, ${c}.50)`,
+    opacity: isDisabled ? 0.7 : 1,
+    bgGradient: gradient,
     borderRadius: "1px",
-    fontSize:
-      props.fontSize === "md" ? "sm" : props.fontSize === "sm" ? "sm" : "sm",
+    fontSize: props?.size ?? "sm",
     color,
     _hover: {
-      bgGradient: `linear(to-t, ${c}.300, ${c}.200, ${c}.100)`,
+      bgGradient: hoverGradient,
+      _disabled: {
+        bg: hoverGradient,
+      },
     },
     _active: {
-      bgGradient: `linear(to-t, ${c}.300, ${c}.200, ${c}.100)`,
+      bgGradient: hoverGradient,
     },
   };
 };
 
-const primaryOutline = (props: any) => {
+const primaryOutline = ({ isDisabled, ...props }: any) => {
   const { colorScheme: c } = props;
+  const gradient = `linear(to-t, ${c}.200, ${c}.100, ${c}.50)`;
   return {
+    opacity: isDisabled ? 0.7 : 1,
     borderWidth: "1px",
     borderColor: `${c}.200`,
     borderRadius: "1px",
     transition: "all 0.2s ease",
     color: `${c}.200`,
     _hover: {
-      bgGradient: `linear(to-t, ${c}.200, ${c}.100, ${c}.50)`,
+      bgGradient: gradient,
       color: "white",
+      _disabled: {
+        bg: gradient,
+      },
     },
     _active: {
-      bgGradient: `linear(to-t, ${c}.200, ${c}.100, ${c}.50)`,
+      bgGradient: gradient,
       color: "white",
     },
   };

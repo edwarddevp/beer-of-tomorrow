@@ -7,7 +7,7 @@ import { FooterCopyright } from "./FooterCopyright";
 
 export const Footer = () => {
   return (
-    <Box as="footer" pos="relative">
+    <Box as="footer" pos="relative" bg="backgrounds.footer">
       <Container {...styles.container}>
         <FooterFirstRow />
         <FooterSecondRow />

@@ -17,7 +17,7 @@ export const logoImage = {
 };
 
 export const firstRowStyles = {
-  templateColumns: ["1fr", null, null, null, "1fr 3fr 1fr"],
+  templateColumns: ["1fr", null, null, null, "1.5fr 3fr 1fr"],
   gap: 16,
   m: "auto",
   w: ["80%", null, null, null, "100%"],
@@ -55,7 +55,7 @@ export const secondRowStyles = {
 };
 
 export const gridItemStyle = {
-  templateRows: "auto 1fr",
+  gridTemplateRows: "auto 1fr",
   alignContent: "flex-start",
   d: "grid",
   gridGap: 6,

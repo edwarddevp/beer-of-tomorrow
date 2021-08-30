@@ -27,7 +27,7 @@ export const LinkUnderlined = ({
         {icon}
         <chakra.span
           borderBottomWidth="1px"
-          pb={1}
+          pb={".1rem"}
           borderColor={color}
           sx={{
             ".parent-link:hover &": {

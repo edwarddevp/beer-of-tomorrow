@@ -6,23 +6,41 @@ export interface CartBeer extends Beer {
   quantity: number;
 }
 
-const initialState: CartBeer[] = [];
+interface initalValue {
+  data: CartBeer[];
+  isLoading: boolean;
+  error: any;
+}
+
+const initialState: initalValue = {
+  data: [],
+  isLoading: false,
+  error: null,
+};
 
 export const cart = (state = initialState, action: AnyAction) => {
   switch (action.type) {
+    case types.CART_ITEM_PENDING:
+      return {
+        ...state,
+        isLoading: true,
+      };
+    case types.CART_ITEM_FAILED:
+      return {
+        ...state,
+        isLoading: false,
+        error: action.payload,
+      };
     case types.GET_CART_ITEMS:
-      return action.payload;
     case types.ADD_CART_ITEM:
-      return [...state, action.payload];
     case types.REMOVE_CART_ITEM:
-      return state.filter((beer) => beer.id !== action.payload);
     case types.UPDATE_CART_ITEM_QUANTITY:
-      const { id, quantity } = action.payload;
-      return state.map((beer) =>
-        beer.id === id ? { ...beer, quantity } : beer
-      );
     case types.REMOVE_ALL_CART_ITEM:
-      return [];
+      return {
+        ...state,
+        isLoading: false,
+        data: action.payload,
+      };
     default:
       return state;
   }

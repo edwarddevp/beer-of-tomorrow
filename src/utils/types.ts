@@ -4,6 +4,10 @@ export interface RequestType<T> {
   errors: Array<{ message: string }>;
 }
 
+export interface Data {
+  value: string;
+  label: string;
+}
 export interface Beer {
   id: number;
   name: string;
@@ -121,4 +125,8 @@ export interface Beer {
   food_pairing: [string, string, string];
   brewers_tips: string;
   contributed_by: string;
+}
+
+export interface AnyObject {
+  [prop: string]: any;
 }

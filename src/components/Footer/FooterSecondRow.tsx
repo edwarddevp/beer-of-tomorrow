@@ -28,7 +28,7 @@ export const FooterSecondRow = () => {
         <Heading as="h6" size="lg">
           Lorem Ipsum
         </Heading>
-        <Grid {...styles.gridItemStyle}>
+        <Grid gap={4} {...styles.rowListStyle}>
           <LinkUnderlined>Lorem Ipsum</LinkUnderlined>
           <LinkUnderlined>Lorem Ipsum</LinkUnderlined>
           <LinkUnderlined fontWeight="bold" color="primary.500">
