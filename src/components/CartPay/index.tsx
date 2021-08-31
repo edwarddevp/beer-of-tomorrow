@@ -20,7 +20,6 @@ export const CartPay = ({}: CartPayProps) => {
     (acc: number, beer: CartBeer) => beer.target_og * beer.quantity + acc,
     0
   );
-  console.log(isLoading);
 
   const handlePurchased = async () => {
     try {

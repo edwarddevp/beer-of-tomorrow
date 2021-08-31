@@ -1,5 +1,6 @@
 .scrollbar::-webkit-scrollbar {
   height: 6px; /* width of the entire scrollbar */
+  width: 6px; /* width of the entire scrollbar */
 }
 .scrollbar::-webkit-scrollbar-track {
   background: transparent; /* color of the tracking area */

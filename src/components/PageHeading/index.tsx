@@ -10,15 +10,27 @@ import {
 
 interface PageHeadingProps {
   title: string;
+  alignItems?: string;
+  justifyContent?: string;
+  placeItems?: string;
+  subTitle?: string;
+  [key: string]: string[] | string | number | undefined;
 }
 
-export const PageHeading = ({ title }: PageHeadingProps) => {
-  const HeadingSize = useBreakpointValue({ base: "xl", md: "2xl" });
+export const PageHeading: React.FunctionComponent<PageHeadingProps> = ({
+  title,
+  alignItems = "center",
+  justifyContent = "center",
+  placeItems = "center",
+  subTitle,
+  ...rest
+}) => {
+  const HeadingSize = useBreakpointValue({ base: "xl", md: "xl", lg: "2xl" });
   return (
-    <Grid gap={2} placeItems="center" py={16}>
+    <Grid gap={2} placeItems={placeItems} py={16} {...rest}>
       <HStack
-        alignItems="center"
-        justifyContent="center"
+        alignItems={alignItems}
+        justifyContent={justifyContent}
         color="gray.600"
         fontSize={["md", null, null, "lg"]}
       >
@@ -29,6 +41,11 @@ export const PageHeading = ({ title }: PageHeadingProps) => {
       <Heading as="h1" size={HeadingSize}>
         {title}
       </Heading>
+      {subTitle && (
+        <Heading as="h3" size="md" color="gray.500">
+          {subTitle}
+        </Heading>
+      )}
     </Grid>
   );
 };

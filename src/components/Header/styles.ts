@@ -22,8 +22,8 @@ export const mediaIcons = (color: string) => ({
 
 export const logoImage = {
   cursor: "pointer",
-  src: "logo.png",
-  alt: "Beer of Tomorrow logo",
+  src: "/logo.png",
+
   h: "auto",
   w: ["150px", "200px", "256px", "320px"],
   minH: ["50px", "65px", "84px", "105px"],

@@ -7,7 +7,7 @@ import { MdEmail } from "react-icons/md";
 export const FooterFirstRow = () => {
   return (
     <Grid {...styles.firstRowStyles}>
-      <Image {...styles.logoImage} />
+      <Image alt="Beer of Tomorrow logo" {...styles.logoImage} />
       <Grid {...styles.firstRowThreeItems}>
         <Grid {...styles.rowStyle}>
           <Icon as={RiSendPlaneFill} {...styles.firstRowIcons} />

@@ -11,7 +11,7 @@ function initStore(preloadedState = {}) {
   return createStore(reducers, preloadedState, composedEnhancers);
 }
 
-export const initializeStore = (preloadedState: RootState) => {
+export const initializeStore = (preloadedState?: RootState) => {
   let _store = store ?? initStore(preloadedState);
 
   // After navigating to a page with an initial Redux state, merge that state

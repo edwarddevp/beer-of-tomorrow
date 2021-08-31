@@ -33,9 +33,8 @@ export const Navbar = () => {
 
   useEffect(() => {
     dispatch(getCartItems());
-  }, []);
+  }, [dispatch]);
 
-  console.log(cart);
   return (
     <Grid px={[0, 4]} gap={[4, null, 8]}>
       <Flex as="nav" alignItems="center" py={[0, 2]}>
@@ -56,7 +55,7 @@ export const Navbar = () => {
         <Spacer d={["none", null, "block"]} />
         <NextLink href="/">
           <a>
-            <Image {...styles.logoImage} />
+            <Image alt="Beer of Tomorrow logo" {...styles.logoImage} />
           </a>
         </NextLink>
         <Spacer />

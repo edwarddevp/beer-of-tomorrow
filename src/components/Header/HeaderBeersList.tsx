@@ -16,7 +16,7 @@ export const HeaderBeersList = () => {
 
   useEffect(() => {
     dispatch(getHeaderBeers());
-  }, []);
+  }, [dispatch]);
 
   return (
     <Fade in={Boolean(headerBeers.length)}>
@@ -24,7 +24,7 @@ export const HeaderBeersList = () => {
         <HStack {...styles.beersHeader}>
           {headerBeers?.map((item: Beer, i: number) => (
             <Fragment key={item?.id}>
-              <NextLink href={`/${item?.id}`}>
+              <NextLink href={`/beers/${item?.id}`}>
                 <a>
                   <Text
                     textAlign="center"

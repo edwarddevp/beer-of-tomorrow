@@ -4,10 +4,10 @@ import { CartList } from "@/components/CartList";
 import { CartPay } from "@/components/CartPay";
 import * as styles from "./styles";
 
-export const CartContainer = () => {
+export const AboutContainer = () => {
   return (
     <Container {...styles.container}>
-      <PageHeading title="Cart" />
+      <PageHeading title="About Us" />
       <Grid>
         <CartList />
         <CartPay />

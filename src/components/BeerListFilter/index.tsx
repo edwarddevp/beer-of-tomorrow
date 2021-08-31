@@ -35,26 +35,25 @@ export const BeerListFilter = () => {
   });
   const watchAllFields = watch();
 
-  const onSubmit = (data: FormBeerFilterValues) => {
-    const params = {
-      beer_name: data.beer_name,
-      hops: data.hops,
-      malt: data.malt,
-      abv_gt: "",
-      abv_lt: "",
-    };
-    if (!(data.abv[0] === 0 && data.abv[1] === 0)) {
-      params.abv_gt = data.abv[0].toString();
-      params.abv_lt = data.abv[1].toString();
-    }
-
-    dispatch(getBeers(params));
-  };
-
   useEffect(() => {
+    const onSubmit = (data: FormBeerFilterValues) => {
+      const params = {
+        beer_name: data.beer_name,
+        hops: data.hops,
+        malt: data.malt,
+        abv_gt: "",
+        abv_lt: "",
+      };
+      if (!(data.abv[0] === 0 && data.abv[1] === 0)) {
+        params.abv_gt = data.abv[0].toString();
+        params.abv_lt = data.abv[1].toString();
+      }
+
+      dispatch(getBeers(params));
+    };
     // handleSubmit(onSubmit);
     onSubmit(watchAllFields);
-  }, [watchAllFields]);
+  }, [watchAllFields, dispatch]);
 
   return (
     <Box d={["none", null, null, "block"]}>
@@ -68,7 +67,7 @@ export const BeerListFilter = () => {
         gap={8}
       >
         <Heading as="h2" size="lg">
-          Beer's Filter
+          Beer&lsquo;s Filter
         </Heading>
         <Accordion allowMultiple>
           <Grid gap={4} color="gray.600">

@@ -11,7 +11,7 @@ interface RadioButtonsProps<T> {
 
 export function RadioButtons<T>({ control, data, name }: RadioButtonsProps<T>) {
   const {
-    field: { onChange, value },
+    field: { onChange },
   } = useController({
     name,
     control,

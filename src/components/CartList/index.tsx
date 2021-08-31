@@ -10,7 +10,7 @@ interface CartListProps {}
 export const CartList = ({}: CartListProps) => {
   const cart = useSelector((state: RootState) => state.cart.data);
   return (
-    <Grid gap={16}>
+    <Grid gap={8}>
       {cart.length ? (
         cart.map((beer: CartBeer) => <CartListItem key={beer.id} beer={beer} />)
       ) : (

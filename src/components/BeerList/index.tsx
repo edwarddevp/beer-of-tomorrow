@@ -20,9 +20,9 @@ export const BeerList = () => {
 
   return (
     <Fade in={!isLoading}>
-      <Grid templateColumns="repeat(auto-fill,minmax(300px, 1fr))" gap={8}>
+      <Grid templateColumns="repeat(auto-fill,minmax(250px, 1fr))" gap={8}>
         {beers.slice(0, numberOfItemsShown).map((beer: Beer) => (
-          <BeerListItem key={beer.id} {...beer} />
+          <BeerListItem key={beer.id} {...beer} />  
         ))}
       </Grid>
       {numberOfItemsShown < beers.length && (

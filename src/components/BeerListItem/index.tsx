@@ -7,16 +7,16 @@ import {
   VStack,
   Box,
   IconButton,
-  HStack,
+  useToast,
 } from "@chakra-ui/react";
-import { IoBagHandleOutline } from "react-icons/io5";
-import { Beer } from "@/utils/types";
-import * as styles from "./styles";
+import NextLink from "next/link";
 import { useDispatch } from "react-redux";
+import { IoBagHandleOutline } from "react-icons/io5";
 import { addCartItem } from "@/actions/cartActions";
-import { useToast } from "@chakra-ui/react";
 import { BeerItemPrice } from "@/components/BeerItemPrice";
 import { getBeerData } from "@/utils/getBeerData";
+import { Beer } from "@/utils/types";
+import * as styles from "./styles";
 
 export const BeerListItem: React.FC<Beer> = (beer) => {
   const toast = useToast();
@@ -36,43 +36,50 @@ export const BeerListItem: React.FC<Beer> = (beer) => {
   };
 
   return (
-    <Box {...styles.cartButtonContainer(beer.id)}>
-      <Box {...styles.bottomRoundBorderContainer}>
-        <Grid {...styles.itemContainer}>
-          <VStack>
-            <Heading size="md" color={isInOffert ? "primary.500" : "gold.800"}>
-              {beerName}
-            </Heading>
-            <Heading size="lg">{beerName}</Heading>
-          </VStack>
-          {beer.image_url ? (
-            <Image
-              src={beer.image_url}
-              alt={beer.name}
-              h={["250px", "350px"]}
-              w="auto"
-            />
-          ) : (
-            <VStack {...styles.imageNotAvailable}>
-              <Heading textAlign="center">Image</Heading>
-              <Heading textAlign="center">Not Available</Heading>
-            </VStack>
-          )}
-          <BeerItemPrice beer={beer} isInOffert={isInOffert} />
-          <Box />
-        </Grid>
+    <Grid {...styles.cartButtonContainer(beer.id)}>
+      <Grid {...styles.bottomRoundBorderContainer}>
+        <NextLink href={`/beers/${beer?.id}`}>
+          <a>
+            <Grid {...styles.itemContainer}>
+              <VStack>
+                <Heading
+                  size="md"
+                  color={isInOffert ? "primary.500" : "gold.800"}
+                >
+                  {beerName}
+                </Heading>
+                <Heading size="lg">{beerName}</Heading>
+              </VStack>
+              {beer.image_url ? (
+                <Image
+                  src={beer.image_url}
+                  alt={beer.name}
+                  h={["250px", "350px"]}
+                  w="auto"
+                />
+              ) : (
+                <VStack {...styles.imageNotAvailable}>
+                  <Heading textAlign="center">Image</Heading>
+                  <Heading textAlign="center">Not Available</Heading>
+                </VStack>
+              )}
+              <BeerItemPrice beer={beer} isInOffert={isInOffert} />
+              <Box />
+              {isInOffert && (
+                <Box {...styles.offerMessage}>
+                  <Text fontSize="xs">-30%</Text>
+                </Box>
+              )}
+            </Grid>
+          </a>
+        </NextLink>
         <Box {...styles.bottonRoundBorder} />
-      </Box>
+      </Grid>
       <IconButton
         onClick={handleAddToCart}
         {...styles.addToCart(beer.id)}
         icon={<IoBagHandleOutline />}
       />
-      {isInOffert && (
-        <Box {...styles.offerMessage}>
-          <Text fontSize="xs">-30%</Text>
-        </Box>
-      )}
-    </Box>
+    </Grid>
   );
 };

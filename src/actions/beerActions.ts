@@ -16,7 +16,6 @@ export const getBeers =
             .filter((item) => Boolean(item))
             .join("&")
         : "";
-      console.log(punkApi + (filterfields ? "?" + filterfields : ""));
       const res = await fetch(
         punkApi + (filterfields ? "?" + filterfields : "")
       );
@@ -27,27 +26,29 @@ export const getBeers =
     }
   };
 
-export const getBeerById = () => async (dispatch: AppDispatch) => {
-  dispatch({ type: types.GET_BEER_BY_ID_PENDING });
-  try {
-    const res = await fetch(punkApi);
-    const beers = await res.json();
-    dispatch({ type: types.GET_BEER_BY_ID_SUCCESS, payload: beers });
-  } catch (error) {
-    dispatch({ type: types.GET_BEER_BY_ID_FAILED, payload: error });
-  }
-};
+export const getBeerById =
+  (id: string | string[]) => async (dispatch: AppDispatch) => {
+    dispatch({ type: types.GET_BEER_BY_ID_PENDING });
+    try {
+      const res = await fetch(punkApi + "/" + id);
+      const beers = await res.json();
+      dispatch({ type: types.GET_BEER_BY_ID_SUCCESS, payload: beers[0] });
+    } catch (error) {
+      dispatch({ type: types.GET_BEER_BY_ID_FAILED, payload: error });
+    }
+  };
 
-export const getRecomendedBeers = () => async (dispatch: AppDispatch) => {
-  dispatch({ type: types.GET_RECOMENDED_BEERS_PENDING });
-  try {
-    const res = await fetch(punkApi);
-    const beers = await res.json();
-    dispatch({ type: types.GET_RECOMENDED_BEERS_SUCCESS, payload: beers });
-  } catch (error) {
-    dispatch({ type: types.GET_RECOMENDED_BEERS_FAILED, payload: error });
-  }
-};
+export const getRecomendedBeers =
+  (hops: string | string[]) => async (dispatch: AppDispatch) => {
+    dispatch({ type: types.GET_RECOMENDED_BEERS_PENDING });
+    try {
+      const res = await fetch(punkApi + "?hops=" + hops + "&page=1&per_page=4");
+      const beers = await res.json();
+      dispatch({ type: types.GET_RECOMENDED_BEERS_SUCCESS, payload: beers });
+    } catch (error) {
+      dispatch({ type: types.GET_RECOMENDED_BEERS_FAILED, payload: error });
+    }
+  };
 
 export const getHeaderBeers = () => async (dispatch: AppDispatch) => {
   dispatch({ type: types.GET_HEADER_BEERS_PENDING });
