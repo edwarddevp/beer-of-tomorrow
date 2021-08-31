@@ -10,8 +10,8 @@ export const container = {
 
 export const logoImage = {
   src: "/logo.png",
-  height: 120,
-  width: 300,
+  height: 124,
+  width: 379,
 };
 
 export const firstRowStyles = {

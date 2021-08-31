@@ -23,8 +23,6 @@ export const mediaIcons = (color: string) => ({
 export const logoImage = {
   cursor: "pointer",
   src: "/logo.png",
-  height: 90,
-  width: 320,
   // minH: ["50px", "65px", "84px", "105px"],
 };
 

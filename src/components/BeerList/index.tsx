@@ -20,8 +20,8 @@ export const BeerList = () => {
   return (
     <Fade in={!isLoading}>
       <Grid templateColumns="repeat(auto-fill,minmax(250px, 1fr))" gap={8}>
-        {beers.map((beer: Beer) => (
-          <BeerListItem key={beer.id} {...beer} />
+        {beers.map((beer: Beer, i: number) => (
+          <BeerListItem key={beer.id} priority={i < 3} beer={beer} />
         ))}
       </Grid>
       {!noMoreItems && (

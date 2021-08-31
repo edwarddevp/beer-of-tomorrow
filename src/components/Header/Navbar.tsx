@@ -25,12 +25,18 @@ import * as styles from "./styles";
 
 export const Navbar = () => {
   const buttonSize = useBreakpointValue({ base: "xs", sm: "sm", lg: "md" });
+  const logoSize = useBreakpointValue({
+    base: { height: 50, width: 150 },
+    md: { height: 67, width: 200 },
+    lg: { height: 117, width: 350 },
+  });
   const cart = useSelector((state: RootState) => state.cart.data);
   const dispatch = useDispatch();
   const itemsNumber = cart.reduce(
     (acc: number, beer: CartBeer) => beer.quantity + acc,
     0
   );
+  console.log("buttonSize", buttonSize);
 
   useEffect(() => {
     dispatch(getCartItems());
@@ -57,7 +63,14 @@ export const Navbar = () => {
         <Box pr={[4, 8, 8, 8]}>
           <NextLink href="/">
             <a>
-              <Image alt="Beer of Tomorrow logo" {...styles.logoImage} />
+              {logoSize && (
+                <Image
+                  alt="Beer of Tomorrow logo"
+                  priority
+                  {...logoSize}
+                  {...styles.logoImage}
+                />
+              )}
             </a>
           </NextLink>
         </Box>

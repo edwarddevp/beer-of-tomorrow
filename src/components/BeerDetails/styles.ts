@@ -1,6 +1,7 @@
 export const container = {
   templateRows: "auto 1fr",
   px: [2, 6, 12, 0],
+  w: ["100%", null, null, null, "60%"],
 };
 
 export const pageHeading = {
@@ -19,7 +20,6 @@ export const icons = {
 };
 
 export const content = {
-  w: ["100%", null, null, null, "60%"],
   fontSize: "1.15rem",
 };
 

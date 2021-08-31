@@ -1,8 +1,11 @@
 import Head from "next/head";
+import dynamic from "next/dynamic";
 import { Header } from "@/components/Header";
 import { Divider } from "@chakra-ui/layout";
-import { Footer } from "@/components/Footer";
 import { chakra } from "@chakra-ui/react";
+const Footer = dynamic<{}>(
+  import("@/components/Footer").then((mod) => mod.Footer)
+);
 interface MainLayoutProps {
   children: JSX.Element[] | JSX.Element;
 }
@@ -13,10 +16,6 @@ export default function MainLayoutProps({ children }: MainLayoutProps) {
       <Head>
         <title>Beer Of Tomorrow</title>
         <meta name="description" content="Beer Of Tomorrow" />
-        <link
-          rel="stylesheet"
-          href="https://unpkg.com/nprogress@0.2.0/nprogress.css"
-        />
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <Header />

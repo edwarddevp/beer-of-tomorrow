@@ -13,7 +13,7 @@ export const pageHeading = {
   textAlign: "center",
   pb: 8,
   subTitle: "Venta Distributions",
-  display: ["grid", "grid", "none"],
+  display: ["grid", "grid", "grid", "none"],
 };
 
 export const subImagesContainer = {

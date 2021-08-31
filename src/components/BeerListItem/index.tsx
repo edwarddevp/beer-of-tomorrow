@@ -19,7 +19,15 @@ import { Beer } from "@/utils/types";
 import * as styles from "./styles";
 import Image from "next/image";
 
-export const BeerListItem: React.FC<Beer> = (beer) => {
+interface BeerListItemProps {
+  beer: Beer;
+  priority?: boolean;
+}
+
+export const BeerListItem: React.FC<BeerListItemProps> = ({
+  beer,
+  priority = false,
+}) => {
   const toast = useToast();
   const { beerName, isInOffert } = getBeerData(beer);
 
@@ -55,8 +63,9 @@ export const BeerListItem: React.FC<Beer> = (beer) => {
                 <Image
                   src={beer.image_url}
                   alt={beer.name}
-                  width={120}
-                  height={350}
+                  width={129}
+                  height={426}
+                  priority={priority}
                 />
               ) : (
                 <VStack {...styles.imageNotAvailable}>

@@ -32,7 +32,9 @@ export const CartListItem = ({ beer }: CartListItemProps) => {
   };
 
   const handleSubstrack = () => {
-    dispatch(updateCartItemQuantity(beer.id, beer.quantity - 1));
+    if (beer.quantity > 1) {
+      dispatch(updateCartItemQuantity(beer.id, beer.quantity - 1));
+    }
   };
 
   const handleRemove = () => {

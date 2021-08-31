@@ -2,7 +2,6 @@ import { Box, Flex, Spacer, Text } from "@chakra-ui/react";
 import React from "react";
 import { Control, Path, useController } from "react-hook-form";
 import ReactSlider from "react-slider";
-import styles from "./Range.module.css";
 
 interface RangeProps<T> {
   control: Control<T>;
@@ -20,9 +19,9 @@ export function Range<T>({ name, control }: RangeProps<T>) {
   return (
     <>
       <ReactSlider
-        className={styles.slider}
-        thumbClassName={styles.thumb}
-        trackClassName={styles.track}
+        className="slider"
+        thumbClassName="thumb"
+        trackClassName="track"
         defaultValue={[0, 0]}
         max={20}
         ariaLabel={["Lower thumb", "Upper thumb"]}

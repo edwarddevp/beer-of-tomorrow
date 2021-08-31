@@ -33,7 +33,7 @@ export const ImageGallery = (props: ImageGalleryProps) => {
     <Grid
       py={[4, null, null, 16]}
       gridRow={1}
-      gridColumn={[1, null, 2]}
+      gridColumn={[1, null, null, 2]}
       alignItems="center"
     >
       <PageHeading title={beer?.name} {...styles.pageHeading} />
@@ -42,6 +42,7 @@ export const ImageGallery = (props: ImageGalleryProps) => {
           <NextImage
             src={currentHoverImage || currentImage}
             alt="Beer Showing Image"
+            priority
             {...styles.mainImage}
           />
         )}
@@ -59,6 +60,7 @@ export const ImageGallery = (props: ImageGalleryProps) => {
               <NextImage
                 src={img}
                 alt={`Product Image ${i}`}
+                priority={i < 3}
                 {...styles.subImage}
               />
             </Box>

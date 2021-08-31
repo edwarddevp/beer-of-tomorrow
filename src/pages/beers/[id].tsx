@@ -1,13 +1,16 @@
 import type { GetStaticProps, NextPage } from "next";
 import { BeerContainer } from "@/containers/BeerContainer";
 import { Beer } from "@/utils/types";
-import { initializeStore } from "@/configs/store";
+import { initializeStore, RootState } from "@/configs/store";
 import { getBeerById, getRecomendedBeers } from "src/actions/beerActions";
+import { useSelector } from "react-redux";
+import { withBeerSeo } from "src/hocs/withBeerSeo";
 
 const api = process.env.NEXT_PUBLIC_PUNK_API || "";
 
 const Home: NextPage = () => {
-  return <BeerContainer />;
+  const beer = useSelector((state: RootState) => state.getBeers.beer);
+  return withBeerSeo(BeerContainer, beer);
 };
 
 export async function getStaticPaths() {
@@ -30,7 +33,9 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
       const beer = reduxStore.getState().getBeerById.data;
       if (beer?.id) {
         await dispatch(getRecomendedBeers(beer.ingredients.hops[0].name));
-        return { props: { initialReduxState: reduxStore.getState() } };
+        return {
+          props: { beer: beer, initialReduxState: reduxStore.getState() },
+        };
       }
     } catch (e) {}
   }

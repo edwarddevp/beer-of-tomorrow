@@ -6,7 +6,7 @@ export const container = {
 };
 
 export const beerDetailsContainer = {
-  templateColumns: ["1fr", null, null, "1fr 1fr", "1.5fr 1fr"],
+  templateColumns: ["1fr", null, null, "1fr 1fr", "1fr 1.5fr"],
 };
 
 export const beerFeaturesContainer = {

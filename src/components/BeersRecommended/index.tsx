@@ -18,7 +18,7 @@ export const BeersRecommended = (props: BeersRecommendedProps) => {
         gap={8}
       >
         {beers.map((beer: Beer) => (
-          <BeerListItem key={beer.id} {...beer} />
+          <BeerListItem key={beer.id} beer={beer} />
         ))}
       </Grid>
     </Grid>
