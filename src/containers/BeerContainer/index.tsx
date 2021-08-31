@@ -6,8 +6,6 @@ import { ImageGallery } from "@/components/Commons/ImageGallery";
 import { BeerDetails } from "@/components/BeerDetails";
 import * as styles from "./styles";
 
-interface BeerContainerProps {}
-
 export const BeerContainer = () => {
   return (
     <Container {...styles.container}>

@@ -7,6 +7,7 @@ import { Provider } from "react-redux";
 import { useStore } from "@/configs/store";
 import Router from "next/router";
 import NProgress from "nprogress";
+import "leaflet/dist/leaflet.css";
 
 // Router Events
 Router.events.on("routeChangeStart", (url) => {

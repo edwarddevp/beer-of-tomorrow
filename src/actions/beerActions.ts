@@ -1,13 +1,14 @@
-import { AppDispatch } from "@/configs/store";
+import { AppDispatch, RootState } from "@/configs/store";
 import * as types from "@/constants/actionTypes";
 import { AnyObject } from "@/utils/types";
 
 const punkApi: string = process.env.NEXT_PUBLIC_PUNK_API || "";
 
 export const getBeers =
-  (filter: AnyObject) => async (dispatch: AppDispatch) => {
+  (filter: AnyObject) => async (dispatch: AppDispatch, getState: RootState) => {
     dispatch({ type: types.GET_BEERS_PENDING });
     try {
+      const { per_page } = getState().getBeers.options;
       const filterfields = filter
         ? Object.keys(filter)
             .map((key) =>
@@ -16,11 +17,38 @@ export const getBeers =
             .filter((item) => Boolean(item))
             .join("&")
         : "";
-      const res = await fetch(
-        punkApi + (filterfields ? "?" + filterfields : "")
-      );
+      const paginate = `?page=1&per_page=${per_page}`;
+      const filterString = filterfields ? "&" + filterfields : "";
+      const res = await fetch(punkApi + paginate + filterString);
       const beers = await res.json();
-      dispatch({ type: types.GET_BEERS_SUCCESS, payload: beers });
+      dispatch({
+        type: types.GET_BEERS_SUCCESS,
+        payload: {
+          beers,
+          filter: filterString,
+          noMoreItems: beers.length < per_page,
+        },
+      });
+    } catch (error) {
+      dispatch({ type: types.GET_BEERS_FAILED, payload: error });
+    }
+  };
+
+export const getMoreBeers =
+  () => async (dispatch: AppDispatch, getState: RootState) => {
+    dispatch({ type: types.GET_BEERS_PENDING });
+    try {
+      const {
+        filter,
+        options: { page, per_page },
+      } = getState().getBeers;
+      const paginate = `?page=${page}&per_page=${per_page}`;
+      const res = await fetch(punkApi + paginate + filter);
+      const beers = await res.json();
+      dispatch({
+        type: types.GET_MORE_BEERS_SUCCESS,
+        payload: { beers, noMoreItems: beers.length < per_page },
+      });
     } catch (error) {
       dispatch({ type: types.GET_BEERS_FAILED, payload: error });
     }

@@ -29,7 +29,6 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
       await dispatch(getBeerById(params.id));
       const beer = reduxStore.getState().getBeerById.data;
       if (beer?.id) {
-        console.log("beer", reduxStore.getState());
         await dispatch(getRecomendedBeers(beer.ingredients.hops[0].name));
         return { props: { initialReduxState: reduxStore.getState() } };
       }

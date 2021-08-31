@@ -4,6 +4,18 @@ export interface RequestType<T> {
   errors: Array<{ message: string }>;
 }
 
+export interface RequestListType<T> {
+  isLoading: boolean;
+  data: T;
+  errors: Array<{ message: string }>;
+  filter: string;
+  options: {
+    page: number;
+    per_page: number;
+  };
+  noMoreItems: boolean;
+}
+
 export interface Data {
   value: string;
   label: string;

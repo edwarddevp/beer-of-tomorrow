@@ -1,9 +1,8 @@
 import { Box, Grid, Heading, Accordion, Divider } from "@chakra-ui/react";
 import { FilterCollapseItem } from "./FilterCollapseItem";
 import { useForm } from "react-hook-form";
-import * as styles from "./styles";
 import { RadioButtons } from "../Commons/RadioButtons";
-import { hops } from "@/constants/beerData";
+import { hops, malt } from "@/constants/beerData";
 import { useEffect } from "react";
 import { Input } from "../Commons/Input";
 import { Range } from "../Commons/Range";
@@ -19,13 +18,7 @@ export interface FormBeerFilterValues {
 
 export const BeerListFilter = () => {
   const dispatch = useDispatch();
-  const {
-    register,
-    control,
-    handleSubmit,
-    watch,
-    formState: { errors },
-  } = useForm<FormBeerFilterValues>({
+  const { register, control, watch } = useForm<FormBeerFilterValues>({
     defaultValues: {
       beer_name: "",
       hops: "",
@@ -51,7 +44,6 @@ export const BeerListFilter = () => {
 
       dispatch(getBeers(params));
     };
-    // handleSubmit(onSubmit);
     onSubmit(watchAllFields);
   }, [watchAllFields, dispatch]);
 
@@ -96,12 +88,11 @@ export const BeerListFilter = () => {
               <RadioButtons<FormBeerFilterValues>
                 control={control}
                 name="malt"
-                data={hops}
+                data={malt}
               />
             </FilterCollapseItem>
           </Grid>
         </Accordion>
-        {/* <Box {...styles.filterTopRightFigure}>asadasdasd</Box> */}
       </Grid>
     </Box>
   );
