@@ -8,6 +8,7 @@ import { useStore } from "@/configs/store";
 import Router from "next/router";
 import NProgress from "nprogress";
 import "leaflet/dist/leaflet.css";
+import Fonts from "@/components/Commons/Fonts";
 
 // Router Events
 Router.events.on("routeChangeStart", (url) => {
@@ -25,6 +26,7 @@ function MyApp({ Component, pageProps }: AppProps) {
           <Component {...pageProps} />
         </MainLayout>
       </Provider>
+      <Fonts />
     </ChakraProvider>
   );
 }

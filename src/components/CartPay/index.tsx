@@ -28,7 +28,7 @@ export const CartPay = ({}: CartPayProps) => {
           title: "Items Purchased.",
           description: "The items inside the cart have been purchased.",
           status: "success",
-          duration: 9000,
+          duration: 4000,
           isClosable: true,
         });
         dispatch(removeAllCartItem());
@@ -36,7 +36,7 @@ export const CartPay = ({}: CartPayProps) => {
         toast({
           title: "The cart is empty.",
           status: "error",
-          duration: 9000,
+          duration: 4000,
           isClosable: true,
         });
       }
@@ -45,7 +45,7 @@ export const CartPay = ({}: CartPayProps) => {
         title: "Error in purchase.",
         description: "Error, try again later.",
         status: "error",
-        duration: 9000,
+        duration: 4000,
         isClosable: true,
       });
     }
