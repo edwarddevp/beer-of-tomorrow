@@ -1,9 +1,10 @@
 import { useEffect, useState } from "react";
 import { useSelector } from "react-redux";
-import { Grid, Image as ChakraImage, Box, chakra } from "@chakra-ui/react";
+import { Grid, Box } from "@chakra-ui/react";
 import { RootState } from "@/configs/store";
 import { PageHeading } from "@/components/PageHeading";
 import * as styles from "./styles";
+import NextImage from "next/image";
 
 interface ImageGalleryProps {}
 
@@ -37,11 +38,13 @@ export const ImageGallery = (props: ImageGalleryProps) => {
     >
       <PageHeading title={beer?.name} {...styles.pageHeading} />
       <Grid templateColumns="2fr 1fr" justifyItems="center">
-        <ChakraImage
-          src={currentHoverImage || currentImage}
-          alt="Beer Showing Image"
-          {...styles.mainImage}
-        />
+        {(currentHoverImage || currentImage) && (
+          <NextImage
+            src={currentHoverImage || currentImage}
+            alt="Beer Showing Image"
+            {...styles.mainImage}
+          />
+        )}
         <Grid {...styles.subImagesContainer}>
           {images.map((img, i) => (
             <Box
@@ -53,7 +56,7 @@ export const ImageGallery = (props: ImageGalleryProps) => {
               pos="relative"
             >
               {/* <Box {...styles.diamond} /> */}
-              <chakra.img
+              <NextImage
                 src={img}
                 alt={`Product Image ${i}`}
                 {...styles.subImage}

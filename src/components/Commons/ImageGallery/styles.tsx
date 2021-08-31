@@ -1,13 +1,12 @@
 import { calc } from "@chakra-ui/styled-system";
 export const mainImage = {
-  h: ["70vh", null, null, "90vh"],
-  w: "auto",
+  height: 800,
+  width: 300,
 };
 
 export const subImage = {
-  h: "120px",
-  w: "auto",
-  zIndex: 2,
+  height: 120,
+  width: 40,
 };
 
 export const pageHeading = {
@@ -23,9 +22,9 @@ export const subImagesContainer = {
   },
   my: 16,
   className: "scrollbar",
-  h: ["50vh", null, null, "65vh"],
+  h: "80vh",
   gap: 8,
-  pr: 4,
+  pr: 8,
   alignContent: "start",
 };
 

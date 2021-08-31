@@ -1,6 +1,6 @@
 import React from "react";
 import {
-  Image,
+  // Image,
   Heading,
   Text,
   Grid,
@@ -17,6 +17,7 @@ import { BeerItemPrice } from "@/components/BeerItemPrice";
 import { getBeerData } from "@/utils/getBeerData";
 import { Beer } from "@/utils/types";
 import * as styles from "./styles";
+import Image from "next/image";
 
 export const BeerListItem: React.FC<Beer> = (beer) => {
   const toast = useToast();
@@ -30,7 +31,7 @@ export const BeerListItem: React.FC<Beer> = (beer) => {
       title: "Beer Added.",
       description: "Beer Added To the cart.",
       status: "success",
-      duration: 6000,
+      duration: 4000,
       isClosable: true,
     });
   };
@@ -54,8 +55,8 @@ export const BeerListItem: React.FC<Beer> = (beer) => {
                 <Image
                   src={beer.image_url}
                   alt={beer.name}
-                  h={["250px", "350px"]}
-                  w="auto"
+                  width={120}
+                  height={350}
                 />
               ) : (
                 <VStack {...styles.imageNotAvailable}>

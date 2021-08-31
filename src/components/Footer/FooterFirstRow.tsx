@@ -1,13 +1,16 @@
-import { Grid, Image, Icon, Text, Button, chakra } from "@chakra-ui/react";
+import { Grid, Icon, Text, Button, chakra, Box } from "@chakra-ui/react";
 import * as styles from "./styles";
 import { RiSendPlaneFill } from "react-icons/ri";
 import { FaPhone } from "react-icons/fa";
 import { MdEmail } from "react-icons/md";
+import Image from "next/image";
 
 export const FooterFirstRow = () => {
   return (
     <Grid {...styles.firstRowStyles}>
-      <Image alt="Beer of Tomorrow logo" {...styles.logoImage} />
+      <Box pr={[4, 8, 8, 8]}>
+        <Image alt="Beer of Tomorrow logo" {...styles.logoImage} />
+      </Box>
       <Grid {...styles.firstRowThreeItems}>
         <Grid {...styles.rowStyle}>
           <Icon as={RiSendPlaneFill} {...styles.firstRowIcons} />

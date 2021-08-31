@@ -1,7 +1,7 @@
 import {
   Flex,
   Spacer,
-  Image,
+  // Image,
   Button,
   HStack,
   IconButton,
@@ -12,6 +12,7 @@ import {
   useBreakpointValue,
   Box,
 } from "@chakra-ui/react";
+import Image from "next/image";
 import NextLink from "next/link";
 import { IoBagHandleOutline } from "react-icons/io5";
 import { FaVk, FaFacebookF } from "react-icons/fa";
@@ -53,11 +54,13 @@ export const Navbar = () => {
           </Link>
         </HStack>
         <Spacer d={["none", null, "block"]} />
-        <NextLink href="/">
-          <a>
-            <Image alt="Beer of Tomorrow logo" {...styles.logoImage} />
-          </a>
-        </NextLink>
+        <Box pr={[4, 8, 8, 8]}>
+          <NextLink href="/">
+            <a>
+              <Image alt="Beer of Tomorrow logo" {...styles.logoImage} />
+            </a>
+          </NextLink>
+        </Box>
         <Spacer />
         <HStack spacing={4} pl={[0, null, null, 12]}>
           <NextLink href="/about-us">
