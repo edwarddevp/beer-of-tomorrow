@@ -1,0 +1,55 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`DiamondBox renders 1`] = `
+.emotion-0 {
+  width: var(--chakra-sizes-2);
+  height: var(--chakra-sizes-2);
+  -webkit-transform: rotate(45deg);
+  -moz-transform: rotate(45deg);
+  -ms-transform: rotate(45deg);
+  transform: rotate(45deg);
+  background: var(--chakra-colors-primary-500);
+}
+
+<div>
+  <div
+    class="emotion-0"
+  />
+</div>
+`;
+
+exports[`DiamondBox renders gray bg 1`] = `
+.emotion-0 {
+  width: var(--chakra-sizes-2);
+  height: var(--chakra-sizes-2);
+  -webkit-transform: rotate(45deg);
+  -moz-transform: rotate(45deg);
+  -ms-transform: rotate(45deg);
+  transform: rotate(45deg);
+  background: var(--chakra-colors-gray-500);
+}
+
+<div>
+  <div
+    class="emotion-0"
+  />
+</div>
+`;
+
+exports[`DiamondBox renders size 8 1`] = `
+.emotion-0 {
+  width: var(--chakra-sizes-8);
+  height: var(--chakra-sizes-8);
+  -webkit-transform: rotate(45deg);
+  -moz-transform: rotate(45deg);
+  -ms-transform: rotate(45deg);
+  transform: rotate(45deg);
+  background: var(--chakra-colors-primary-500);
+}
+
+<div>
+  <div
+    class="emotion-0"
+  />
+</div>
+`;

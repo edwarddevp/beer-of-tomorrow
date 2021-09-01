@@ -1,5 +1,5 @@
 import { LinkUnderlined } from "@/components/Commons/LinkUnderlined";
-import { DiamondBox } from "@/components/DiamondBox";
+import { DiamondBox } from "@/components/Commons/DiamondBox";
 import {
   Grid,
   HStack,

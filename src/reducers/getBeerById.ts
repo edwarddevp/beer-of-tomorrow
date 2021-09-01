@@ -3,8 +3,8 @@ import * as types from "@/constants/actionTypes";
 import { AnyAction } from "redux";
 
 const initialState: RequestType<Beer | {}> = {
-  isLoading: false,
   data: {},
+  isLoading: false,
   errors: [],
 };
 

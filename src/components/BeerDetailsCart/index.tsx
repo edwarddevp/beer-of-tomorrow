@@ -17,9 +17,11 @@ import { getBeerData } from "@/utils/getBeerData";
 import { BeerItemPrice } from "../BeerItemPrice";
 import * as styles from "./styles";
 
-interface BeerDetailsCartProps {}
+interface BeerDetailsCartProps {
+  noToast?: boolean;
+}
 
-export const BeerDetailsCart = () => {
+export const BeerDetailsCart = ({ noToast }: BeerDetailsCartProps) => {
   const dispatch = useDispatch();
   const toast = useToast();
   const beer = useSelector((state: RootState) => state.getBeerById.data);
@@ -45,13 +47,14 @@ export const BeerDetailsCart = () => {
 
   const handleAddToCart = async () => {
     await dispatch(addCartItem(beer));
-    toast({
-      title: "Beer Added.",
-      description: "Beer Added To the cart.",
-      status: "success",
-      duration: 6000,
-      isClosable: true,
-    });
+    !noToast &&
+      toast({
+        title: "Beer Added.",
+        description: "Beer Added To the cart.",
+        status: "success",
+        duration: 6000,
+        isClosable: true,
+      });
   };
 
   return (
@@ -73,7 +76,7 @@ export const BeerDetailsCart = () => {
             {...styles.iconButtons}
           />
           <Spacer />
-          {cartBeerQuantity}
+          <span aria-label="Item Quantity in the Cart">{cartBeerQuantity}</span>
           <Spacer />
           <IconButton
             isDisabled={isLoading}

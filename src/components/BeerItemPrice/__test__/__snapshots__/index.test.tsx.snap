@@ -1,0 +1,165 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`BeerItemPrice If item doesn't have a price 1`] = `<div />`;
+
+exports[`BeerItemPrice renders 1`] = `
+.emotion-0 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+}
+
+.emotion-0>*:not(style)~*:not(style) {
+  margin-top: 0px;
+  -webkit-margin-end: 0px;
+  margin-inline-end: 0px;
+  margin-bottom: 0px;
+  -webkit-margin-start: 0px;
+  margin-inline-start: 0px;
+}
+
+.emotion-1 {
+  color: var(--chakra-colors-black);
+  font-weight: var(--chakra-fontWeights-bold);
+  font-size: var(--chakra-fontSizes-4xl);
+}
+
+.emotion-2 {
+  color: var(--chakra-colors-gray-500);
+  font-size: var(--chakra-fontSizes-lg);
+}
+
+@media screen and (min-width: 30em) {
+  .emotion-2 {
+    font-size: var(--chakra-fontSizes-xl);
+  }
+}
+
+<div>
+  <div
+    class="chakra-stack emotion-0"
+  >
+    <p
+      class="chakra-text emotion-1"
+    >
+      $
+      1044
+    </p>
+    <p
+      class="chakra-text emotion-2"
+    >
+      $ 
+      20
+    </p>
+  </div>
+</div>
+`;
+
+exports[`BeerItemPrice renders isInOffer 1`] = `
+.emotion-0 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+}
+
+.emotion-0>*:not(style)~*:not(style) {
+  margin-top: 0px;
+  -webkit-margin-end: 0px;
+  margin-inline-end: 0px;
+  margin-bottom: 0px;
+  -webkit-margin-start: 0px;
+  margin-inline-start: 0px;
+}
+
+.emotion-1 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+}
+
+.emotion-1>*:not(style)~*:not(style) {
+  margin-top: 0px;
+  -webkit-margin-end: 0px;
+  margin-inline-end: 0px;
+  margin-bottom: 0px;
+  -webkit-margin-start: var(--chakra-space-2);
+  margin-inline-start: var(--chakra-space-2);
+}
+
+.emotion-2 {
+  color: var(--chakra-colors-primary-500);
+  font-weight: var(--chakra-fontWeights-bold);
+  font-size: var(--chakra-fontSizes-4xl);
+}
+
+.emotion-3 {
+  font-weight: var(--chakra-fontWeights-bold);
+  color: var(--chakra-colors-gray-300);
+  font-size: var(--chakra-fontSizes-sm);
+  -webkit-text-decoration: line-through;
+  text-decoration: line-through;
+  padding-top: var(--chakra-space-2);
+}
+
+@media screen and (min-width: 30em) {
+  .emotion-3 {
+    font-size: var(--chakra-fontSizes-xl);
+  }
+}
+
+.emotion-4 {
+  color: var(--chakra-colors-gray-500);
+  font-size: var(--chakra-fontSizes-lg);
+}
+
+@media screen and (min-width: 30em) {
+  .emotion-4 {
+    font-size: var(--chakra-fontSizes-xl);
+  }
+}
+
+<div>
+  <div
+    class="chakra-stack emotion-0"
+  >
+    <div
+      class="chakra-stack emotion-1"
+    >
+      <p
+        class="chakra-text emotion-2"
+      >
+        $
+        1044
+      </p>
+      <p
+        class="chakra-text emotion-3"
+      >
+        $
+        1012.68
+      </p>
+    </div>
+    <p
+      class="chakra-text emotion-4"
+    >
+      $ 
+      20
+    </p>
+  </div>
+</div>
+`;

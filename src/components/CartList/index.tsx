@@ -1,6 +1,6 @@
 import { RootState } from "@/configs/store";
 import { Grid, Heading, chakra } from "@chakra-ui/react";
-import { useDispatch, useSelector } from "react-redux";
+import { useSelector } from "react-redux";
 import { CartBeer } from "src/reducers/cart";
 import { CartListItem } from "@/components/CartListItem";
 import NextLink from "next/link";
@@ -14,7 +14,7 @@ export const CartList = ({}: CartListProps) => {
       {cart.length ? (
         cart.map((beer: CartBeer) => <CartListItem key={beer.id} beer={beer} />)
       ) : (
-        <Grid placeItems="center" py={24} gap={4}>
+        <Grid placeItems="center" pb={24} pt={[0, null, null, 24]} gap={4}>
           <Heading>The cart is empty</Heading>
           <NextLink href="/">
             <a>

@@ -1,4 +1,4 @@
-export default {
+const Accordion = {
   parts: ["container", "button", "panel", "icon"],
   baseStyle: {
     button: {
@@ -14,3 +14,5 @@ export default {
     },
   },
 };
+
+export default Accordion;

@@ -44,15 +44,13 @@ export interface Beer {
     unit: string;
   };
   method: {
-    mash_temp: [
-      {
-        temp: {
-          value: number;
-          unit: string;
-        };
-        duration: number;
-      }
-    ];
+    mash_temp: {
+      temp: {
+        value: number;
+        unit: string;
+      };
+      duration: number | null;
+    }[];
     fermentation: {
       temp: {
         value: number;
@@ -62,79 +60,25 @@ export interface Beer {
     twist: null;
   };
   ingredients: {
-    malt: [
-      {
-        name: string;
-        amount: {
-          value: number;
-          unit: string;
-        };
-      },
-      {
-        name: string;
-        amount: {
-          value: number;
-          unit: string;
-        };
-      },
-      {
-        name: string;
-        amount: {
-          value: number;
-          unit: string;
-        };
-      }
-    ];
-    hops: [
-      {
-        name: string;
-        amount: {
-          value: number;
-          unit: string;
-        };
-        add: string;
-        attribute: string;
-      },
-      {
-        name: string;
-        amount: {
-          value: number;
-          unit: string;
-        };
-        add: string;
-        attribute: string;
-      },
-      {
-        name: string;
-        amount: {
-          value: number;
-          unit: string;
-        };
-        add: string;
-        attribute: string;
-      },
-      {
-        name: string;
-        amount: {
-          value: number;
-          unit: string;
-        };
-        add: string;
-        attribute: string;
-      },
-      {
-        name: string;
-        amount: {
-          value: number;
-          unit: string;
-        };
-        add: string;
-        attribute: string;
-      }
-    ];
+    malt: {
+      name: string;
+      amount: {
+        value: number;
+        unit: string;
+      };
+    }[];
+    hops: {
+      name: string;
+      amount: {
+        value: number;
+        unit: string;
+      };
+      add: string;
+      attribute: string;
+    }[];
     yeast: string;
   };
-  food_pairing: [string, string, string];
+  food_pairing: string[];
   brewers_tips: string;
   contributed_by: string;
 }

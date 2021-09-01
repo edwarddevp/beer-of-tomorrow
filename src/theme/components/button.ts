@@ -1,3 +1,4 @@
+/* istanbul ignore file */
 import { mode } from "@chakra-ui/theme-tools";
 
 const primary = ({ isDisabled, ...props }: any) => {

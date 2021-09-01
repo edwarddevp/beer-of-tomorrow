@@ -1,5 +1,5 @@
 import React from "react";
-import { DiamondBox } from "@/components/DiamondBox";
+import { DiamondBox } from "@/components/Commons/DiamondBox";
 import { useRadio, Box, HStack, Text } from "@chakra-ui/react";
 
 interface RadioDiamondProps {

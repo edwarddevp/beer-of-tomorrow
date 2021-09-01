@@ -12,6 +12,7 @@ const sleep = (milliseconds: number) => {
 
 const getCartItemsFromLocalStorage = async () => {
   const beerCartString = localStorage.getItem(localStorageKey);
+
   if (beerCartString) {
     return await JSON.parse(beerCartString);
   } else {
@@ -25,17 +26,17 @@ export const getCartItems = () => async (dispatch: AppDispatch) => {
     dispatch({
       type: types.CART_ITEM_PENDING,
     });
+    const beerCart = await getCartItemsFromLocalStorage();
+    dispatch({
+      type: types.GET_CART_ITEMS,
+      payload: beerCart,
+    });
   } catch (e) {
     dispatch({
       type: types.CART_ITEM_FAILED,
       payload: e,
     });
   }
-  const beerCart = await getCartItemsFromLocalStorage();
-  dispatch({
-    type: types.GET_CART_ITEMS,
-    payload: beerCart,
-  });
 };
 
 export const addCartItem = (beer: Beer) => async (dispatch: AppDispatch) => {
@@ -101,21 +102,25 @@ export const updateCartItemQuantity =
       dispatch({
         type: types.CART_ITEM_PENDING,
       });
-      const beerCart = await getCartItemsFromLocalStorage();
-      const beerCartUpdated = beerCart.map((beer: CartBeer) =>
-        beer.id === id
-          ? {
-              ...beer,
-              quantity,
-            }
-          : beer
-      );
-      const beerCartString = JSON.stringify(beerCartUpdated);
-      localStorage.setItem(localStorageKey, beerCartString);
-      dispatch({
-        type: types.UPDATE_CART_ITEM_QUANTITY,
-        payload: beerCartUpdated,
-      });
+      if (quantity === 0) {
+        removeCartItem(id)(dispatch);
+      } else {
+        const beerCart = await getCartItemsFromLocalStorage();
+        const beerCartUpdated = beerCart.map((beer: CartBeer) =>
+          beer.id === id
+            ? {
+                ...beer,
+                quantity,
+              }
+            : beer
+        );
+        const beerCartString = JSON.stringify(beerCartUpdated);
+        localStorage.setItem(localStorageKey, beerCartString);
+        dispatch({
+          type: types.UPDATE_CART_ITEM_QUANTITY,
+          payload: beerCartUpdated,
+        });
+      }
     } catch (e) {
       dispatch({
         type: types.CART_ITEM_FAILED,

@@ -1,7 +1,6 @@
-import { calc } from "@chakra-ui/styled-system";
 export const mainImage = {
-  height: 800,
-  width: 300,
+  height: 600,
+  width: 200,
 };
 
 export const subImage = {
@@ -22,7 +21,7 @@ export const subImagesContainer = {
   },
   my: 16,
   className: "scrollbar",
-  h: "80vh",
+  h: "60vh",
   gap: 8,
   pr: 8,
   alignContent: "start",

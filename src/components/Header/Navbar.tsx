@@ -36,7 +36,6 @@ export const Navbar = () => {
     (acc: number, beer: CartBeer) => beer.quantity + acc,
     0
   );
-  console.log("buttonSize", buttonSize);
 
   useEffect(() => {
     dispatch(getCartItems());

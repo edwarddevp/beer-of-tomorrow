@@ -1,13 +1,14 @@
 export const container = {
   templateRows: "auto 1fr",
   px: [2, 6, 12, 0],
+  pl: [2, 6, 12, 8, 0],
   w: ["100%", null, null, null, "60%"],
 };
 
 export const pageHeading = {
   justifyContent: "start",
   pb: 8,
-  display: ["none", "none", "grid"],
+  display: ["none", "none", "none", "grid"],
   subTitle: "Venta Distributions",
   placeItems: "start",
 };
@@ -27,5 +28,5 @@ export const details = {
   templateColumns: "1fr 1fr",
   gap: 4,
   pt: [12, null, null, 0],
-  pb: 12,
+  pb: 8,
 };

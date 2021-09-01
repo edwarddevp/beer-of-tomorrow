@@ -1,7 +1,7 @@
 import { Fragment, useEffect } from "react";
 import { Text, Box, HStack, Fade, Grid } from "@chakra-ui/react";
 import { Beer } from "@/utils/types";
-import { DiamondBox } from "../DiamondBox";
+import { DiamondBox } from "@/components/Commons/DiamondBox";
 import { useDispatch, useSelector } from "react-redux";
 import { getHeaderBeers } from "@/actions/index";
 import { RootState } from "@/configs/store";

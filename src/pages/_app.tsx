@@ -9,6 +9,7 @@ import theme from "@/theme";
 import { useStore } from "@/configs/store";
 import Fonts from "@/components/Commons/Fonts";
 import "nprogress/nprogress.css";
+import "leaflet/dist/leaflet.css";
 import "../styles/globals.css";
 
 // Router Events

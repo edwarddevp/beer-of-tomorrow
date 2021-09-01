@@ -1,0 +1,169 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`PageHeading renders 1`] = `
+.emotion-0 {
+  display: grid;
+  grid-gap: var(--chakra-space-2);
+  place-items: center;
+  padding-top: var(--chakra-space-16);
+  padding-bottom: var(--chakra-space-16);
+}
+
+.emotion-1 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  -webkit-justify-content: center;
+  justify-content: center;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  color: var(--chakra-colors-gray-600);
+  font-size: var(--chakra-fontSizes-md);
+}
+
+.emotion-1>*:not(style)~*:not(style) {
+  margin-top: 0px;
+  -webkit-margin-end: 0px;
+  margin-inline-end: 0px;
+  margin-bottom: 0px;
+  -webkit-margin-start: 0.5rem;
+  margin-inline-start: 0.5rem;
+}
+
+@media screen and (min-width: 62em) {
+  .emotion-1 {
+    font-size: var(--chakra-fontSizes-lg);
+  }
+}
+
+.emotion-2 {
+  transition-property: var(--chakra-transition-property-common);
+  transition-duration: var(--chakra-transition-duration-fast);
+  transition-timing-function: var(--chakra-transition-easing-ease-out);
+  cursor: pointer;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  outline: 2px solid transparent;
+  outline-offset: 2px;
+  color: inherit;
+}
+
+.emotion-2:hover,
+.emotion-2[data-hover] {
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  color: var(--chakra-colors-primary-500);
+}
+
+.emotion-2:focus,
+.emotion-2[data-focus] {
+  box-shadow: var(--chakra-shadows-none);
+}
+
+.emotion-2:active,
+.emotion-2[data-active] {
+  box-shadow: var(--chakra-shadows-none);
+}
+
+.emotion-3 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+}
+
+.emotion-3>*:not(style)~*:not(style) {
+  margin-top: 0px;
+  -webkit-margin-end: 0px;
+  margin-inline-end: 0px;
+  margin-bottom: 0px;
+  -webkit-margin-start: 0.5rem;
+  margin-inline-start: 0.5rem;
+}
+
+.emotion-4 {
+  border-bottom-width: 1px;
+  padding-bottom: .1rem;
+}
+
+.parent-link:hover .emotion-4 {
+  border-color: var(--chakra-colors-primary-500);
+}
+
+.emotion-5 {
+  width: var(--chakra-sizes-2);
+  height: var(--chakra-sizes-2);
+  -webkit-transform: rotate(45deg);
+  -moz-transform: rotate(45deg);
+  -ms-transform: rotate(45deg);
+  transform: rotate(45deg);
+  background: var(--chakra-colors-gray-500);
+}
+
+.emotion-7 {
+  font-family: var(--chakra-fonts-heading);
+  font-weight: var(--chakra-fontWeights-bold);
+  font-size: var(--chakra-fontSizes-3xl);
+  line-height: 1.33;
+}
+
+@media screen and (min-width: 48em) {
+  .emotion-7 {
+    font-size: var(--chakra-fontSizes-4xl);
+    line-height: 1.2;
+  }
+}
+
+<div>
+  <div
+    class="emotion-0"
+  >
+    <div
+      class="chakra-stack emotion-1"
+    >
+      <a
+        class="chakra-link parent-link emotion-2"
+        href="#"
+      >
+        <div
+          class="chakra-stack emotion-3"
+        >
+          <span
+            class="emotion-4"
+          >
+            Lorem
+          </span>
+        </div>
+      </a>
+      <div
+        class="emotion-5"
+      />
+      <h3
+        class="chakra-text emotion-6"
+      >
+        Beer of Tomorrow
+      </h3>
+    </div>
+    <h1
+      class="chakra-heading emotion-7"
+    >
+      Hello
+    </h1>
+  </div>
+</div>
+`;

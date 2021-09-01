@@ -24,7 +24,8 @@
       "@/theme": ["src/theme"],
       "@/configs/*": ["src/configs/*"],
       "@/constants/*": ["src/constants/*"],
-      "@/actions/*": ["src/actions/*"]
+      "@/actions/*": ["src/actions/*"],
+      "test-utils": ["src/utils/test-utils"]
     }
   },
   "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx"],

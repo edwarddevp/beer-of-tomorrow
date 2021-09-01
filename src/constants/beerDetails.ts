@@ -17,11 +17,11 @@ export const beerDetails: BeerDetails[] = [
   },
   {
     label: "abv",
-    value: "attenuation_level",
+    value: "abv",
   },
   {
     label: "ibu",
-    value: "attenuation_level",
+    value: "ibu",
   },
   {
     label: "Volume",

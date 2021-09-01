@@ -57,12 +57,14 @@ export const ImageGallery = (props: ImageGalleryProps) => {
               pos="relative"
             >
               {/* <Box {...styles.diamond} /> */}
-              <NextImage
-                src={img}
-                alt={`Product Image ${i}`}
-                priority={i < 3}
-                {...styles.subImage}
-              />
+              {img && (
+                <NextImage
+                  src={img}
+                  alt={`Beer-Image-${i}`}
+                  priority={i < 3}
+                  {...styles.subImage}
+                />
+              )}
             </Box>
           ))}
         </Grid>
