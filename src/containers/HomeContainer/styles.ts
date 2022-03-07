@@ -6,5 +6,5 @@ export const container = {
 
 export const containerMain = {
   templateColumns: ["1fr", null, null, "1fr 3fr"],
-  gap: 16,
+  gap: 8,
 };

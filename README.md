@@ -1,7 +1,5 @@
 This is the e-commerce sit of the company beer-of-tomorrow
 
-Project built for the frontend challenge of time jobs
-
 ## Tools
 
 - Typescript
